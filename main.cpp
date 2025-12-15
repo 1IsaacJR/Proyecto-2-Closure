@@ -82,6 +82,33 @@ void function1()
     function2(); // llamada de la funcion2 
 }
 
+
+
+/* 
+Funciones sin funcion de orden superior
+
+void function3(int x, int a)
+{
+    std::cout << "In function3: x = " << x << ", a = " << a << '\n';
+}
+
+void function2(int x, int a)
+{
+    x += 2;
+    std::cout << "In function2: x = " << x << ", a = " << a << '\n';
+    function3(x, a);
+}
+
+void function1_no_closure()
+{
+    int px = 5, pa = 7;
+    function2(px, pa);
+}
+
+
+*/
+
+
 /*
 Se iniciliza el main, para la demostracion de funciones
 */
@@ -89,6 +116,7 @@ int main(){
     //Generamos un closure
     auto clos = fnc();
     //closure de prueba para suma consecutiva
+    cout << "Ejemplificacion de ejecucion de funcion de incremento con closure" << endl;
     for (int i=0; i<5; i++) cout << clos() << endl;
     cout << endl;
    /*  //Simulacion de closure para entorno compartido
@@ -99,7 +127,7 @@ int main(){
     cout << c1() << endl; // 2
     cout << c2() << endl; // 3  <- representa un ambiente compartido
  */
- 
+    cout << "Implementacion de cerraduras donde las funciones anidadas preservan el ambiente lexico del punto donde fueron definidas " << endl;
     // llamada de la funcion1 de prueba para la comprobacion de ambientes
     function1();
 }
